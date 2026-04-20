@@ -2,25 +2,31 @@
 
 const express = require('express');
 
-const studentsRouter = require('./routes/students');
-const coursesRouter = require('./routes/courses');
-const attendanceRouter = require('./routes/attendance');
+const estudiantesRouter = require('./routes/estudiantes');
+const asistenciasRouter = require('./routes/asistencias');
+const reportesRouter = require('./routes/reportes');
 
 const app = express();
 
 app.use(express.json());
 
-app.get('/api/health', (req, res) => {
-  res.json({ status: 'ok', timestamp: new Date().toISOString() });
+app.get('/', (req, res) => {
+  res.json({ mensaje: 'API de Gestión de Asistencia Estudiantil', version: '1.0.0' });
 });
 
-app.use('/api/students', studentsRouter);
-app.use('/api/courses', coursesRouter);
-app.use('/api/attendance', attendanceRouter);
+app.use('/api/estudiantes', estudiantesRouter);
+app.use('/api/asistencias', asistenciasRouter);
+app.use('/api/reportes', reportesRouter);
 
 // 404 handler
 app.use((req, res) => {
-  res.status(404).json({ message: 'Ruta no encontrada' });
+  res.status(404).json({ error: 'Ruta no encontrada.' });
+});
+
+// Global error handler
+app.use((err, req, res, _next) => {
+  console.error(err.stack);
+  res.status(500).json({ error: 'Error interno del servidor.' });
 });
 
 module.exports = app;

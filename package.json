@@ -2,11 +2,11 @@
   "name": "asistencia-api-vibe",
   "version": "1.0.0",
   "description": "plataforma de asistencia de estudiantes a partir de la practica de vibe code",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node server.js",
-    "test": "jest --testPathPatterns=tests/ --forceExit",
-    "test:verbose": "jest --testPathPatterns=tests/ --forceExit --verbose"
+    "start": "node index.js",
+    "dev": "node --watch index.js",
+    "test": "jest --runInBand"
   },
   "repository": {
     "type": "git",
