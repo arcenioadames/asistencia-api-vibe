@@ -1,0 +1,289 @@
+{
+  "info": {
+    "name": "Asistencia API",
+    "_postman_id": "asistencia-api-vibe-collection",
+    "description": "Colección de endpoints para la API de Asistencia de Estudiantes",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Health",
+      "item": [
+        {
+          "name": "Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/health",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "health"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Estudiantes",
+      "item": [
+        {
+          "name": "Listar todos los estudiantes",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/students",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "students"]
+            }
+          }
+        },
+        {
+          "name": "Obtener estudiante por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/students/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "students", "1"]
+            }
+          }
+        },
+        {
+          "name": "Crear estudiante",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nombre\": \"Ana\",\n  \"apellido\": \"Pérez\",\n  \"matricula\": \"A001\",\n  \"email\": \"ana.perez@universidad.edu\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/students",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "students"]
+            }
+          }
+        },
+        {
+          "name": "Actualizar estudiante",
+          "request": {
+            "method": "PUT",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"nuevo.email@universidad.edu\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/students/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "students", "1"]
+            }
+          }
+        },
+        {
+          "name": "Eliminar estudiante",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/students/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "students", "1"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cursos",
+      "item": [
+        {
+          "name": "Listar todos los cursos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/courses",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "courses"]
+            }
+          }
+        },
+        {
+          "name": "Obtener curso por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/courses/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "courses", "1"]
+            }
+          }
+        },
+        {
+          "name": "Crear curso",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nombre\": \"Matemáticas I\",\n  \"codigo\": \"MAT101\",\n  \"descripcion\": \"Álgebra y cálculo diferencial\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/courses",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "courses"]
+            }
+          }
+        },
+        {
+          "name": "Actualizar curso",
+          "request": {
+            "method": "PUT",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"descripcion\": \"Descripción actualizada del curso\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/courses/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "courses", "1"]
+            }
+          }
+        },
+        {
+          "name": "Eliminar curso",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/courses/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "courses", "1"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Asistencia",
+      "item": [
+        {
+          "name": "Listar todos los registros",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/attendance",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "attendance"]
+            }
+          }
+        },
+        {
+          "name": "Obtener registro por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/attendance/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "attendance", "1"]
+            }
+          }
+        },
+        {
+          "name": "Ver asistencia por estudiante",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/attendance/student/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "attendance", "student", "1"]
+            }
+          }
+        },
+        {
+          "name": "Ver asistencia por curso",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/attendance/course/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "attendance", "course", "1"]
+            }
+          }
+        },
+        {
+          "name": "Registrar asistencia",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"estudianteId\": 1,\n  \"cursoId\": 1,\n  \"fecha\": \"2024-03-01\",\n  \"presente\": true,\n  \"observaciones\": \"Llegó puntual\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/attendance",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "attendance"]
+            }
+          }
+        },
+        {
+          "name": "Actualizar registro de asistencia",
+          "request": {
+            "method": "PUT",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"presente\": false,\n  \"observaciones\": \"Ausente por enfermedad\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/attendance/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "attendance", "1"]
+            }
+          }
+        },
+        {
+          "name": "Eliminar registro de asistencia",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/attendance/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "attendance", "1"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
