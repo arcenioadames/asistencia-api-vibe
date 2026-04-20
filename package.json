@@ -1,0 +1,30 @@
+{
+  "name": "asistencia-api-vibe",
+  "version": "1.0.0",
+  "description": "plataforma de asistencia de estudiantes a partir de la practica de vibe code",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "jest --testPathPatterns=tests/ --forceExit",
+    "test:verbose": "jest --testPathPatterns=tests/ --forceExit --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arcenioadames/asistencia-api-vibe.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/arcenioadames/asistencia-api-vibe/issues"
+  },
+  "homepage": "https://github.com/arcenioadames/asistencia-api-vibe#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "jest": "^30.3.0",
+    "supertest": "^7.2.2"
+  }
+}
